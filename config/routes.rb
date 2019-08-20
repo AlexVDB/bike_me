@@ -1,11 +1,12 @@
 Rails.application.routes.draw do
   resources :bikes do
-    get '/manage', to: 'bikes#manage'
-
+    member do
+      get 'manage'
+    end
     resources :reservations, only: [:show, :new, :create]
   end
 
-  get '/profil', to: 'users#profil'
+  resources :users, only: [:show]
   root to: 'bikes#search'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
