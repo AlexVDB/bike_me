@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   resources :bikes do
-    get 'bikes/manage', to: 'bikes#manage'
+    get '/manage', to: 'bikes#manage'
+
+    resources :reservations, only: [:show, :new, :create]
   end
 
   get '/profil', to: 'users#profil'
