@@ -52,7 +52,5 @@ before_action :set_bike, only: [:show, :edit, :update, :destroy]
 
   def bike_params
     params.require(bike).permit(:title, :description, :category, :motor, :price)
-
-
-
+  end
 end
