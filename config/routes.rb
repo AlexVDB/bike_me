@@ -3,7 +3,7 @@ Rails.application.routes.draw do
     member do
       get 'manage'
     end
-    resources :reservations, only: [:show, :new, :create]
+    resources :reservations, only: [:show, :create]
   end
 
   resources :users, only: [:show]
