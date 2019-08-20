@@ -1,2 +1,16 @@
 <h1>Bikes#search</h1>
 <p>Find me in app/views/bikes/search.html.erb</p>
+
+<h1>Book an awesome bike</h1>
+
+      <%= simple_form_for @bike do |f| %>
+        <%= f.input :localisation %>
+        <%= f.input :category %>
+        <%= f.input :motor %>
+        <%= f.button :search, class: 'btn btn-primary' %>
+      <% end %>
+
+
+
+
+
