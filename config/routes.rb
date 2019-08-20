@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
   resources :bikes do
-    get '/manage', to: 'bikes#manage'
-
+    member do
+      get 'manage'
+    end
     resources :reservations, only: [:show, :new, :create]
   end
 
