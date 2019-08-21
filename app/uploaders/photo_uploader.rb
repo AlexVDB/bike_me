@@ -1,5 +1,8 @@
 class PhotoUploader < CarrierWave::Uploader::Base
   include Cloudinary::CarrierWave
+
+  IMG_IDS = ["nbfecqfc3luwviyp38pa", "orsvnxeht8zezosawfwj", "qz05jumfveyemr9oupnv", "aaiv4pfgnfjar7773aoo", "iuhrvk6ztwziktgj0usv", "lgtktdsbdxfrlfmhsgb1"]
+
   # Include RMagick or MiniMagick support:
   # include CarrierWave::RMagick
   # include CarrierWave::MiniMagick
@@ -13,6 +16,12 @@ class PhotoUploader < CarrierWave::Uploader::Base
   #def store_dir
     #"uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
   #end
+
+  def remove!
+    return if IMG_IDS.include? file.public_id
+
+    super
+  end
 
   # Provide a default URL as a default if there hasn't been a file uploaded:
   # def default_url(*args)

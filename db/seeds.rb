@@ -5,6 +5,7 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+puts "seed start..."
 User.destroy_all
 
 users_attributes = [
@@ -38,7 +39,8 @@ bikes_attributes = [
     category: 'VTT',
     motor: true,
     price: 100,
-    user: User.first
+    user: User.first,
+    photo: Cloudinary::CarrierWave::StoredFile.new("image/upload/v1566401651/nbfecqfc3luwviyp38pa.jpg")
   },
   {
     title: 'Mon premier vélo',
@@ -46,7 +48,8 @@ bikes_attributes = [
     category: 'Enfant',
     motor: false,
     price: 70,
-    user: User.first
+    user: User.first,
+    photo: Cloudinary::CarrierWave::StoredFile.new("image/upload/v1566401651/iuhrvk6ztwziktgj0usv.jpg")
   },
   {
     title: 'Tandem pour 10 personnes',
@@ -54,7 +57,8 @@ bikes_attributes = [
     category: 'Tandem',
     motor: false,
     price: 150,
-    user: User.last
+    user: User.last,
+    photo: Cloudinary::CarrierWave::StoredFile.new("image/upload/v1566401651/aaiv4pfgnfjar7773aoo.jpg")
   },
   {
     title: 'Vélo vintage (dans son jus)',
@@ -62,7 +66,8 @@ bikes_attributes = [
     category: 'Vintage',
     motor: false,
     price: 30,
-    user: User.last
+    user: User.last,
+    photo: Cloudinary::CarrierWave::StoredFile.new("image/upload/v1566401651/qz05jumfveyemr9oupnv.jpg")
   },
   {
     title: 'Vélo sans roues',
@@ -70,7 +75,8 @@ bikes_attributes = [
     category: 'VTT',
     motor: true,
     price: 10,
-    user: User.first
+    user: User.first,
+    photo: Cloudinary::CarrierWave::StoredFile.new("image/upload/v1566401651/orsvnxeht8zezosawfwj.jpg")
   }
 ]
 
