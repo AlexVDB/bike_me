@@ -1,4 +1,3 @@
-
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
     <%= link_to "#", class: "navbar-brand" do %>
       <%= image_tag "https://i.pinimg.com/originals/b5/d2/f4/b5d2f4b06c0390c4dadb66da03ade490.png" %>
@@ -38,15 +37,4 @@
       </ul>
     </div>
   </div>
-<h1>Sélection exclusive de Vélos.</h1>
-<p>Find me in app/views/bikes/search.html.erb</p>
 
-
-<%= form_with url: bikes_path, local: true, method: :get do |form| %>
-  <%= form.text_field :category %>
-  <%= form.text_field :motor %>
-  <%= form.text_field :price %>
-    <%= form.text_field :localisation %>
-
-  <%= form.submit %>
-<% end %>
