@@ -10,6 +10,9 @@ class BikesController < ApplicationController
   end
 
   def show
+    @bike = Bike.find(params[:id])
+    # modifs pour afficher le formulaire de reservation dans le show
+    @reservation = Reservation.new
   end
 
   def manage
