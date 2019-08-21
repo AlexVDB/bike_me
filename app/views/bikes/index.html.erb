@@ -10,7 +10,7 @@
 
       <div class="card-bike">
         <% @bikes.each do |bike| %>
-        <img src="https://images-na.ssl-images-amazon.com/images/I/91RvuoQvQ8L._SL1500_.jpg" />
+        <%= cl_image_tag @bike.photo, height: 300, width: 400 %>
         <div class="card-bike-infos">
           <div>
             <h2><%= "#{bike.title}" %></h2>
