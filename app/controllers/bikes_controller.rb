@@ -6,10 +6,14 @@ class BikesController < ApplicationController
   end
 
   def index
-    @bikes = Bike.all
+    @bikes = Bike.joins(:user).where(category: params[:category],
+      price: params[:price], motor: params[:motor], users: { localisation: params[:localisation] })
   end
 
   def show
+    @bike = Bike.find(params[:id])
+    # modifs pour display le formulaire de reservation dans le show d'un bike
+    @reservation = Reservation.new
   end
 
   def manage
@@ -44,12 +48,11 @@ class BikesController < ApplicationController
     redirect_to user_path(@user)
   end
 
-
   def set_bike
     @bike = Bike.find(params[:id])
   end
 
   def bike_params
-    params.require(bike).permit(:title, :description, :category, :motor, :price)
+    params.require(bike).permit(:title, :description, :category, :motor, :price, :localisation)
   end
 end
