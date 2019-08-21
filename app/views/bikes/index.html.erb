@@ -1,13 +1,28 @@
-<h1>Notre sélection de vélo pour vous :</h1>
 
- <% @bikes.each do |bike| %>
-   <h3><%= "#{bike.title}" %></h3>
-   <p>Loué par <strong><%= "#{bike.user.name}" %></strong></p>
-   <h4><%= "#{bike.price}" %>€</h4>
-   <p><%= "#{bike.description}" %></p>
-   <p><%= "#{bike.user.localisation}" %></p>
-   <label># <%= "#{bike.category}" %></label>
-   <!-- Gérer l'affichage de l'icone dans le style ? -->
-   <%= link_to "Voir ce vélo", bike_path(bike) %>
- <% end %>
+ <div class="main-container">
 
+
+    <div class="cards">
+
+
+
+      <div class="card-bike">
+        <% @bikes.each do |bike| %>
+        <img src="https://images-na.ssl-images-amazon.com/images/I/91RvuoQvQ8L._SL1500_.jpg" />
+        <div class="card-bike-infos">
+          <div>
+            <h2><%= "#{bike.title}" %></h2>
+             <p><%= "#{bike.description}" %></p>
+          </div>
+          <h2 class="card-bike-pricing"><%= "#{bike.price}" %>€</h2>
+          <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-bike-user avatar-bordered" />
+        </div>
+
+        <% end %>
+
+      </div>
+
+
+    </div>
+
+  </div>
