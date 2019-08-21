@@ -31,8 +31,6 @@ users_attributes = [
 User.create!(users_attributes)
 
 
-Bike.destroy_all
-
 bikes_attributes = [
   {
     title: 'VTT amélioré',
@@ -40,7 +38,7 @@ bikes_attributes = [
     category: 'VTT',
     motor: true,
     price: 100,
-    user: User.first,
+    user: User.first
   },
   {
     title: 'Mon premier vélo',
@@ -48,7 +46,7 @@ bikes_attributes = [
     category: 'Enfant',
     motor: false,
     price: 70,
-    user: User.first,
+    user: User.first
   },
   {
     title: 'Tandem pour 10 personnes',
@@ -56,7 +54,7 @@ bikes_attributes = [
     category: 'Tandem',
     motor: false,
     price: 150,
-    user: User.last,
+    user: User.last
   },
   {
     title: 'Vélo vintage (dans son jus)',
@@ -64,7 +62,7 @@ bikes_attributes = [
     category: 'Vintage',
     motor: false,
     price: 30,
-    user: User.last,
+    user: User.last
   },
   {
     title: 'Vélo sans roues',
@@ -72,8 +70,10 @@ bikes_attributes = [
     category: 'VTT',
     motor: true,
     price: 10,
-    user: User.first,
+    user: User.first
   }
 ]
 
 Bike.create!(bikes_attributes)
+
+puts "seed ok!"
