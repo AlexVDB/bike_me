@@ -1,5 +1,11 @@
+<h2><%= "#{@bike.title}" %></h2>
+
+
 <h1>Bikes#show</h1>
 <p>Find me in app/views/bikes/show.html.erb</p>
+
+<!-- app/views/articles/show.html.erb -->
+<%= cl_image_tag @bike.photo, height: 300, width: 400 %>
 
 
 <!-- simple_form [@bike, @reservation] -->

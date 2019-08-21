@@ -8,4 +8,6 @@
    <p><%= "#{bike.user.localisation}" %></p>
    <label># <%= "#{bike.category}" %></label>
    <!-- Gérer l'affichage de l'icone dans le style ? -->
+   <%= link_to "Voir ce vélo", bike_path(bike) %>
  <% end %>
+
