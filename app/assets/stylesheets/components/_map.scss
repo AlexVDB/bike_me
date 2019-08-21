@@ -1,0 +1,15 @@
+.main-container {
+  display: flex;
+  /*padding-top: 100px;*/
+}
+
+.main-container .cards {
+  flex-grow: 1;
+}
+
+
+.main-container #map {
+  height: 100vh;
+  position: sticky;
+  top: 0px;
+}

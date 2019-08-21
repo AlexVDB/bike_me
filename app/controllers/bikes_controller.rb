@@ -6,8 +6,7 @@ class BikesController < ApplicationController
   end
 
   def index
-    @bikes = Bike.joins(:user).where(category: params[:category],
-      price: params[:price], motor: params[:motor], users: { localisation: params[:localisation] })
+    @bikes = Bike.joins(:user).where(category: params[:category], price: params[:price], motor: params[:motor], users: { localisation: params[:localisation] })
   end
 
   def show
