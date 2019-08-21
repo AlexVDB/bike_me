@@ -1,5 +1,6 @@
 class Bike < ApplicationRecord
   CATEGORIES = %w[VTT Enfant Tandem Vintage]
+  mount_uploader :photo, PhotoUploader
 
   belongs_to :user
 
