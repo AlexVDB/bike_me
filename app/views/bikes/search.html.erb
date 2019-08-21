@@ -1,52 +1,15 @@
 
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
-    <%= link_to "#", class: "navbar-brand" do %>
-      <%= image_tag "https://i.pinimg.com/originals/b5/d2/f4/b5d2f4b06c0390c4dadb66da03ade490.png" %>
-    <% end %>
-
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-
-
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav mr-auto">
-
-        <li class="nav-item active">
-          <%= link_to "Faire louer son Vélo", "#", class: "nav-link" %>
-        </li>
-
-        <li class="nav-item active">
-          <%= link_to "Trouver un Vélo", "#", class: "nav-link" %>
-        </li>
-
-        <li class="nav-item active">
-          <%= link_to "Inscription", "#", class: "nav-link" %>
-        </li>
-
-        <li class="nav-item">
-          <%= link_to "Connexion", "#", class: "nav-link" %>
-        </li>
-<!--
-        <li class="nav-item dropdown">
-          <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-            <%= link_to "Action", "#", class: "dropdown-item" %>
-            <%= link_to "Another action", "#", class: "dropdown-item" %>
-          </div>
-        </li> -->
-      </ul>
-    </div>
-  </div>
-<h1>Sélection exclusive de Vélos.</h1>
-<p>Find me in app/views/bikes/search.html.erb</p>
-
-
-<%= form_with url: bikes_path, local: true, method: :get do |form| %>
-  <%= form.text_field :category %>
-  <%= form.text_field :motor %>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://www.orcieres.com/typo3temp/assets/_processed_/0/c/csm_772383_b3af168406.jpg);">
+  <div class="container">
+    <h1>Sélection exclusive de Vélos.</h1>
+    
+  <%= form_with(url: bikes_path, local: true, method: :get) do |form| %>
+  <%= select_tag(:category, options_for_select(Bike::CATEGORIES)) %>
+  <%= form.check_box :motor %>
   <%= form.text_field :price %>
-    <%= form.text_field :localisation %>
-
+  <%= form.text_field :localisation %>
   <%= form.submit %>
 <% end %>
+  </div>
+</div>
+
