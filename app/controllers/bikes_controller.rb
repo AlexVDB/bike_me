@@ -1,7 +1,6 @@
 class BikesController < ApplicationController
-
-before_action :set_bike, only: [:show, :edit, :update, :destroy]
-
+  skip_before_action :authenticate_user!, only: [:index, :search, :show]
+  before_action :set_bike, only: [:show, :edit, :update, :destroy]
 
   def search
   end
