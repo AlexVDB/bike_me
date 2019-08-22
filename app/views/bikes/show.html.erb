@@ -1,11 +1,33 @@
+
+<%= cl_image_tag @bike.photo, height: 300, width: 400 %>
 <h2><%= "#{@bike.title}" %></h2>
+  <p>Disponible à : <strong><%= "#{@bike.user.localisation}" %></strong></p>
+  <p><%= "#{@bike.description}" %></p>
+<label>#<%= "#{@bike.category}" %></label> <p><%= "#{@bike.motor}" %></p>
 
 
-<h1>Bikes#show</h1>
-<p>Find me in app/views/bikes/show.html.erb</p>
+
+<h4><strong>TOTAL :</strong> <%= "#{@bike.price}" %>€</h1>
+  <p>dont <strong>4€</strong> de frais de service </p>
+
+  <%= simple_form_for [@bike, @reservation] do |f| %>
+  <%= f.error_notification %>
+  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
+  <div class="form-inputs">
+    <%= f.date_select :date, as: :date %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>
+
+
+
 
 <!-- app/views/articles/show.html.erb -->
-<%= cl_image_tag @bike.photo, height: 300, width: 400 %>
+
 
 
 <!-- simple_form [@bike, @reservation] -->
