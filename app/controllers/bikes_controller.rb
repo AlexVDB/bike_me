@@ -7,6 +7,15 @@ class BikesController < ApplicationController
 
   def index
     @bikes = BikeSearch.new(params).search
+    @markers = @bikes.map do |bike|
+      {
+        lat: bike.user.latitude,
+        lng: bike.user.longitude,
+        infoWindow: render_to_string(partial: "info_window", locals: { bike: bike })
+
+      }
+
+    end
   end
 
   def show

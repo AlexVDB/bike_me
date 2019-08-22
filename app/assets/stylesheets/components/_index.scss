@@ -5,3 +5,16 @@
 @import "banner";
 @import "card";
 @import "map";
+
+
+
+
+
+.main-container {
+  display: flex;
+  /*padding-top: 100px;*/
+}
+
+.main-container .cards {
+  flex-grow: 1;
+}
