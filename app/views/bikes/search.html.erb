@@ -2,12 +2,13 @@
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://www.orcieres.com/typo3temp/assets/_processed_/0/c/csm_772383_b3af168406.jpg);">
   <div class="container">
     <h1>Sélection exclusive de Vélos.</h1>
-    
+
   <%= form_with(url: bikes_path, local: true, method: :get) do |form| %>
   <%= select_tag(:category, options_for_select(Bike::CATEGORIES)) %>
   <%= form.check_box :motor %>
   <%= form.text_field :price %>
   <%= form.text_field :localisation %>
+  <%= date_field(:reservation, :start_date) %>
   <%= form.submit %>
 <% end %>
   </div>
