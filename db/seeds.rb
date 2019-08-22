@@ -19,13 +19,13 @@ users_attributes = [
     name:'Tata',
     email: 'tata@gmail.com',
     password: 'test12345',
-    localisation: 'Paris'
+    localisation: 'Lyon'
   },
   {
     name:'Titi',
     email: 'titi@gmail.com',
     password: 'test12345',
-    localisation: 'Marseille'
+    localisation: 'Lyon'
   }
 ]
 
@@ -45,7 +45,7 @@ bikes_attributes = [
   {
     title: 'Mon premier vélo',
     description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae quis inventore molestiae illum, facilis sequi, illo quos aut repellat nostrum ipsam minus. Facere perspiciatis fuga ratione repellendus, voluptatum sit provident.',
-    category: 'Enfant',
+    category: 'VTT',
     motor: false,
     price: 70,
     user: User.first,
@@ -54,7 +54,7 @@ bikes_attributes = [
   {
     title: 'Tandem pour 10 personnes',
     description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae quis inventore molestiae illum, facilis sequi, illo quos aut repellat nostrum ipsam minus. Facere perspiciatis fuga ratione repellendus, voluptatum sit provident.',
-    category: 'Tandem',
+    category: 'VTT',
     motor: false,
     price: 150,
     user: User.last,
@@ -63,7 +63,7 @@ bikes_attributes = [
   {
     title: 'Vélo vintage (dans son jus)',
     description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae quis inventore molestiae illum, facilis sequi, illo quos aut repellat nostrum ipsam minus. Facere perspiciatis fuga ratione repellendus, voluptatum sit provident.',
-    category: 'Vintage',
+    category: 'VTT',
     motor: false,
     price: 30,
     user: User.last,
