@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+  LOCALISATION = %w[Paris Lyon Marseille]
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
@@ -10,7 +11,7 @@ class User < ApplicationRecord
 
   validates :name, uniqueness: true, presence: true, allow_blank: false
   validates :email, uniqueness: true, presence: true, allow_blank: false
-  validates :localisation, presence: true, allow_blank: false
+  validates :localisation, presence: true, allow_blank: false, inclusion: { in: LOCALISATION }
 
   geocoded_by :localisation
   after_validation :geocode, if: :will_save_change_to_localisation?
