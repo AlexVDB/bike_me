@@ -1,6 +1,11 @@
 class ReservationsController < ApplicationController
   def show
-    @reservation = Reservation.find(params[:id])
+    @reservation = current_user.reservations.find(params[:id])
+    if @reservation.nil?
+      redirect_to root, notice: 'It is not your resa buddy!'
+    else
+      render :show
+    end
   end
 
   def create
@@ -9,9 +14,9 @@ class ReservationsController < ApplicationController
     @reservation.bike = @bike
     @reservation.user = current_user
     if @reservation.save
-      redirect_to @reservation, notice: 'Reservation was successfully booked!'
+      redirect_to reservation_path(@reservation), notice: 'Reservation was successfully booked!'
     else
-      render :new, alert: 'You haz errors!'
+      redirect_to bike_path(@bike), alert: 'This bike is not open for reservation at this date!'
     end
   end
 
