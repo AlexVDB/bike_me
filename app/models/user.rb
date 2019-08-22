@@ -13,5 +13,5 @@ class User < ApplicationRecord
   validates :localisation, uniqueness: true, presence: true, allow_blank: false
 
   geocoded_by :localisation
-  after_validation :geocode, if: :will_save_change_to_address?
+  after_validation :geocode, if: :will_save_change_to_localisation?
 end
