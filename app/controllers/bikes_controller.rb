@@ -7,13 +7,14 @@ class BikesController < ApplicationController
 
   def index
     @bikes = Bike.joins(:user)
-                 .where("price < ?", params[:price])
+                 .where("price < ?", params[:price].to_i)
                  .where(
                    category: params[:category],
                    motor: params[:motor],
                    users: {
                      localisation: params[:localisation]
                    }
+
                  )
   end
 
