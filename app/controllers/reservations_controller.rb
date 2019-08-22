@@ -1,8 +1,8 @@
 class ReservationsController < ApplicationController
   def show
-    @reservation = current_user.reservations.find(params[:id])
+    @reservation = current_user.reservations.where(id: params[:id]).first
     if @reservation.nil?
-      redirect_to root, notice: 'It is not your resa buddy!'
+      redirect_to root_path, notice: 'It is not your resa buddy!'
     else
       render :show
     end
