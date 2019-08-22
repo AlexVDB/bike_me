@@ -11,7 +11,7 @@ class ReservationsController < ApplicationController
     if @reservation.save
       redirect_to @reservation, notice: 'Reservation was successfully booked!'
     else
-      render :new
+      render :new, alert: 'You haz errors!'
     end
   end
 
