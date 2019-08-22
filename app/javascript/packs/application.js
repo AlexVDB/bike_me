@@ -3,7 +3,7 @@ import 'flatpickr/dist/flatpickr.css';
 
 
 import "bootstrap";
-<<<<<<< HEAD
+
 import flatpickr from "flatpickr";
 
 const flatInputs = document.querySelectorAll('.flatpickr');
