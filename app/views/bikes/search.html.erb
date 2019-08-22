@@ -1,16 +1,22 @@
-
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://www.orcieres.com/typo3temp/assets/_processed_/0/c/csm_772383_b3af168406.jpg);">
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1507035895480-2b3156c31fc8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80);">
   <div class="container">
-    <h1>Sélection exclusive de Vélos.</h1>
+    <h1><strong> Easy</strong> Ride, <strong>Everywhere.</strong></h1>
+    <p>Your ride for the day</p>
 
-  <%= form_with(url: bikes_path, local: true, method: :get) do |form| %>
-  <%= select_tag(:category, options_for_select(Bike::CATEGORIES)) %>
-  <%= form.check_box :motor %>
-  <%= form.text_field :price %>
-  <%= form.text_field :localisation %>
-  <%= date_field(:reservation, :start_date) %>
-  <%= form.submit %>
-<% end %>
+    <%= form_with(url: bikes_path, local: true, method: :get) do |form| %>
+      <%= select_tag(:category, options_for_select(Bike::CATEGORIES)) %>
+      <%= select_tag(:localisation, options_for_select(User::LOCALISATION)) %>
+      <span class="checkbox">
+        <input type="checkbox" id="checkbox_1" name="motor">
+        <label for="checkbox_1"><i class="fas fa-cog"></i>Motorised ?</label>
+      </span>
+      <%= form.text_field :price, placeholder: 'Maximum price' %>
+      <%= date_field(:reservation, :start_date) %>
+
+      <a class="btn btn-flat" href="#">Bike</a>
+    <% end %>
+
   </div>
 </div>
+
 
