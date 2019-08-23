@@ -45,18 +45,18 @@ bikes_attributes = [
   {
     title: 'Mon premier vélo',
     description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae quis inventore molestiae illum, facilis sequi, illo quos aut repellat nostrum ipsam minus. Facere perspiciatis fuga ratione repellendus, voluptatum sit provident.',
-    category: 'VTT',
+    category: 'Enfant',
     motor: false,
     price: 70,
     user: User.first,
     photo: Cloudinary::CarrierWave::StoredFile.new("image/upload/v1566401651/iuhrvk6ztwziktgj0usv.jpg")
   },
   {
-    title: 'Tandem pour 10 personnes',
+    title: 'Tandem pour 2 personnes',
     description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae quis inventore molestiae illum, facilis sequi, illo quos aut repellat nostrum ipsam minus. Facere perspiciatis fuga ratione repellendus, voluptatum sit provident.',
-    category: 'VTT',
+    category: 'Tandem',
     motor: false,
-    price: 150,
+    price: 50,
     user: User.last,
     photo: Cloudinary::CarrierWave::StoredFile.new("image/upload/v1566401651/aaiv4pfgnfjar7773aoo.jpg")
   },
@@ -64,8 +64,8 @@ bikes_attributes = [
     title: 'Vélo vintage (dans son jus)',
     description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae quis inventore molestiae illum, facilis sequi, illo quos aut repellat nostrum ipsam minus. Facere perspiciatis fuga ratione repellendus, voluptatum sit provident.',
     category: 'VTT',
-    motor: false,
-    price: 30,
+    motor: true,
+    price: 130,
     user: User.last,
     photo: Cloudinary::CarrierWave::StoredFile.new("image/upload/v1566401651/qz05jumfveyemr9oupnv.jpg")
   },
@@ -74,7 +74,7 @@ bikes_attributes = [
     description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae quis inventore molestiae illum, facilis sequi, illo quos aut repellat nostrum ipsam minus. Facere perspiciatis fuga ratione repellendus, voluptatum sit provident.',
     category: 'VTT',
     motor: true,
-    price: 10,
+    price: 150,
     user: User.first,
     photo: Cloudinary::CarrierWave::StoredFile.new("image/upload/v1566401651/orsvnxeht8zezosawfwj.jpg")
   }
