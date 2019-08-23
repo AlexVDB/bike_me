@@ -1,6 +1,6 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
     <%= link_to "/", class: "navbar-brand" do %>
-      <%= image_tag "https://i.pinimg.com/originals/b5/d2/f4/b5d2f4b06c0390c4dadb66da03ade490.png" %> Bike Me
+       <div class="navbar-logo">Bike Me</div>
     <% end %>
 
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -10,17 +10,10 @@
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
-
-        <li class="nav-item active">
-          <%= link_to "Louer son Vélo", "/bikes/new", class: "nav-link" %>
-        </li>
-
-        <li class="nav-item active">
-          <%= link_to "Inscription", "/users/sign_up", class: "nav-link" %>
-        </li>
-
         <li class="nav-item">
-          <%= link_to "Connexion", "/users/sign_in", class: "nav-link" %>
+          <%= link_to "Profil", "/users/sign_in", class: "nav-link" %>
+        </li>
+          <img class="avatar dropdown-toggle" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src="https://i.imgur.com/r0bsDqL.png" />
         </li>
       </ul>
     </div>
