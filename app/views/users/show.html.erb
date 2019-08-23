@@ -1,2 +1,36 @@
-<h1>Users#profil</h1>
-<p>Find me in app/views/users/profil.html.erb</p>
+<div id="fullscreen_bg" class="fullscreen_bg">
+  <div class="profile-card" >
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQyPSwvdIdV2OVVBr0j8il7gFw4wZsqt0hujhxbvptNi2Ryi8YfyQ" alt="">
+
+
+    <div class="name">
+      <h1><%= @user.name%></h1>
+    </div>
+
+    <div class="adresse">
+      <p><%= @user.email%></p>
+    </div>
+
+
+    <div class="card-bike">
+
+      <div class="historique">
+          <h2>Historique des réservations:</h2>
+          <div class="card-product-infos">
+            <!-- <div></div> -->
+            <% @user.reservations.each do |reservation|%>
+            <p><strong><%= reservation.bike.title %></strong></p>
+            <p><%= reservation.bike.description%></p>
+            <p><strong><%= reservation.bike.price%></strong></p>
+            <%end%>
+          </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+
+
+
+

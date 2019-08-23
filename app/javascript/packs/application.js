@@ -3,7 +3,6 @@ import 'flatpickr/dist/flatpickr.css';
 
 
 import "bootstrap";
-
 import flatpickr from "flatpickr";
 
 const flatInputs = document.querySelectorAll('.flatpickr');
@@ -17,4 +16,3 @@ import 'mapbox-gl/dist/mapbox-gl.css'; // <-- you need to uncomment the styleshe
 import { initMapbox } from '../plugins/init_mapbox';
 
 initMapbox();
-

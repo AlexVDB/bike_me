@@ -1,0 +1,82 @@
+.fullscreen_bg {
+  background-size: cover;
+  background-position: 50% 50%;
+  background-image: url('http://blog.transfer-iphone-recovery.com/images/photo-with-blur-background.jpg');
+  // background-repeat:repeat;
+  padding: 50px;
+  }
+
+.profile-card {
+  border-radius: 7px;
+  margin: 50px auto;
+  background: white;
+  text-align:center;
+  height: 800px;
+  width: 500px;
+
+}
+
+img {
+  padding-top: 20px;
+  border-radius:50%;
+  opacity: 0.8;
+  filter: alpha(opacity=50);
+}
+
+.card-bike {
+  overflow: hidden;
+  height: 300px;
+  background: transparent;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+  padding:25px;
+  margin-top:35px;
+  border-radius: 6px;
+}
+
+.card-bike img {
+  height: 100%;
+  width: 120px;
+  object-fit: cover;
+}
+
+.card-bike h2 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.card-bike p {
+  font-size: 12px;
+  line-height: 1.4;
+  opacity: .7;
+  margin-bottom: 0;
+  margin-top: 15px;
+}
+
+.card-bike .card-bike-infos {
+  padding: 30px;
+}
+
+h3 {
+  margin-top: 20px;
+}
+
+.name {
+  margin: 50px auto;
+}
+
+.email {
+  margin: 40px auto;
+}
+
+.tel {
+  margin: 40px auto;
+}
+
+.historique {
+  margin: 40px auto;
+  justify-content:center;
+}
+
