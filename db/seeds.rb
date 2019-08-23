@@ -6,6 +6,8 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 puts "seed start..."
+Reservation.destroy_all
+Bike.destroy_all
 User.destroy_all
 
 users_attributes = [
@@ -81,8 +83,6 @@ bikes_attributes = [
 ]
 
 Bike.create!(bikes_attributes)
-Reservation.create!(date: Date.tomorrow, user: User.first, bike: Bike.last)
-Reservation.create!(date: Date.tomorrow, user: User.first, bike: Bike.first)
 
 
 puts "seed ok!"
