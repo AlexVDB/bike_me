@@ -1,5 +1,6 @@
 class BikeSearch
   def initialize(params)
+    puts params
     @params = params
     @bikes = Bike.all
   end

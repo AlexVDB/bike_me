@@ -56,6 +56,8 @@ class BikesController < ApplicationController
     redirect_to user_path(@user)
   end
 
+  private
+
   def set_bike
     @bike = Bike.find(params[:id])
   end
