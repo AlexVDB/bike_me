@@ -1,5 +1,13 @@
 
 
+.main-container {
+  display: flex;
+  // padding-top: 100px;
+}
+
+.main-container .cards {
+  flex-grow: 1;
+}
 
 .mapboxgl-popup {
   max-width: 200px;
@@ -9,3 +17,6 @@
   text-align: center;
   font-family: 'Open Sans', sans-serif;
 }
+
+
+
