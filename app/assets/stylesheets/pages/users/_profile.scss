@@ -6,24 +6,20 @@
   padding: 50px;
   }
 
-.profile-card {
+.profil-img {
   border-radius: 7px;
   margin: 50px auto;
   background: white;
   text-align:center;
   height: 800px;
   width: 500px;
-
-}
-
-img {
   padding-top: 20px;
   border-radius:50%;
   opacity: 0.8;
   filter: alpha(opacity=50);
 }
 
-.card-bike {
+.card-profil {
   overflow: hidden;
   height: 300px;
   background: transparent;
@@ -35,19 +31,19 @@ img {
   border-radius: 6px;
 }
 
-.card-bike img {
+.card-profil img {
   height: 100%;
   width: 120px;
   object-fit: cover;
 }
 
-.card-bike h2 {
+.card-profil h2 {
   font-size: 16px;
   font-weight: bold;
   margin: 0;
 }
 
-.card-bike p {
+.card-profil p {
   font-size: 12px;
   line-height: 1.4;
   opacity: .7;
@@ -55,7 +51,7 @@ img {
   margin-top: 15px;
 }
 
-.card-bike .card-bike-infos {
+.card-profil .card-profil-infos {
   padding: 30px;
 }
 

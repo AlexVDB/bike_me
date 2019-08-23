@@ -6,13 +6,14 @@
     <%= form_with(url: bikes_path, local: true, method: :get) do |form| %>
       <%= select_tag(:category, options_for_select(Bike::CATEGORIES)) %>
       <%= select_tag(:localisation, options_for_select(User::LOCALISATION)) %>
+      <%= form.text_field :price, placeholder: 'Maximum price' %>
+      <%= date_field(:reservation, :start_date, class: 'flatpickr') %>
+      <br>
       <span class="checkbox">
         <input type="checkbox" id="checkbox_1" name="motor">
         <label for="checkbox_1"><i class="fas fa-cog"></i>Motorised ?</label>
       </span>
-      <%= form.text_field :price, placeholder: 'Maximum price' %>
-      <%= date_field(:reservation, :start_date, class: 'flatpickr') %>
-
+      <br><br>
       <%= form.submit 'Bike', class: 'btn btn-flat' %>
 
     <% end %>
