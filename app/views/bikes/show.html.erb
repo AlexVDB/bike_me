@@ -1,14 +1,16 @@
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1481106839235-a2c71e2564de?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60);">
+<div>
+  <%= cl_image_tag @bike.photo, height: 300, width: 400 %>
+</div>
 
-<%= cl_image_tag @bike.photo, height: 300, width: 400 %>
-<h2><%= "#{@bike.title}" %></h2>
+<div>
+  <h2><%= "#{@bike.title}" %></h2>
   <p>Disponible à : <strong><%= "#{@bike.user.localisation}" %></strong></p>
   <p><%= "#{@bike.description}" %></p>
-<label>#<%= "#{@bike.category}" %></label> <p><%= "#{@bike.motor}" %></p>
-
-
-
-<h4><strong>TOTAL :</strong> <%= "#{@bike.price}" %>€</h1>
+  <label>#<%= "#{@bike.category}" %></label> <p><%= "#{@bike.motor}" %></p>
+  <h4><strong>TOTAL :</strong> <%= "#{@bike.price}" %>€</h1>
   <p>dont <strong>4€</strong> de frais de service </p>
+</div>
 
   <%= simple_form_for [@bike, @reservation] do |f| %>
   <%= f.error_notification %>
@@ -22,6 +24,8 @@
     <%= f.button :submit %>
   </div>
 <% end %>
+
+
 
 
 
