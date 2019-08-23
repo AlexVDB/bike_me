@@ -15,13 +15,12 @@
     <div class="card-bike">
       <img src="#" alt="">
       <div class="historique">
-        <% @user.reservations.each do%>
-        <%= @user.bike%>
+        <% @user.reservations.each do |reservation|%>
+          <%= reservation.bike.title %>
+          <div class="card-product-infos">
+            <p><%= reservation.bike.description%></p> -->
+          </div>
         <%end%>
-        <div class="card-product-infos">
-          <h2><%= @bike.title%></h2>
-          <p><%= @bike.description%></p>
-        </div>
       </div>
     </div>
   </div>
