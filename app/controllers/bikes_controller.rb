@@ -6,8 +6,16 @@ class BikesController < ApplicationController
   end
 
   def index
-    @bikes = Bike.joins(:user).where(category: params[:category],
-      price: params[:price], motor: params[:motor], users: { localisation: params[:localisation] })
+    @bikes = BikeSearch.new(params).search
+    @markers = @bikes.map do |bike|
+      {
+        lat: bike.user.latitude,
+        lng: bike.user.longitude,
+        infoWindow: render_to_string(partial: "info_window", locals: { bike: bike })
+
+      }
+
+    end
   end
 
   def show
@@ -53,6 +61,6 @@ class BikesController < ApplicationController
   end
 
   def bike_params
-    params.require(bike).permit(:title, :description, :category, :motor, :price, :localisation)
+    params.require(bike).permit(:title, :description, :category, :motor, :price, :localisation, :photo)
   end
 end

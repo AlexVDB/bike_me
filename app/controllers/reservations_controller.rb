@@ -1,17 +1,22 @@
 class ReservationsController < ApplicationController
   def show
-    @reservation = Reservation.find(params[:id])
+    @reservation = current_user.reservations.where(id: params[:id]).first
+    if @reservation.nil?
+      redirect_to root_path, notice: 'It is not your resa buddy!'
+    else
+      render :show
+    end
   end
 
   def create
     @bike = Bike.find(params[:bike_id])
-    @reservation = Reservation.new(reservation_params)
-    @reservation.bike = @bike
-    @reservation.user = current_user
-    if @reservation.save
-      redirect_to @reservation, notice: 'Reservation was successfully booked!'
+    @new_reservation = Reservation.new(reservation_params)
+    @new_reservation.bike = @bike
+    @new_reservation.user = current_user
+    if @new_reservation.save
+      redirect_to reservation_path(@new_reservation), notice: 'Reservation was successfully booked!'
     else
-      render :new
+      redirect_to bike_path(@bike), alert: 'This bike is not open for reservation at this date!'
     end
   end
 

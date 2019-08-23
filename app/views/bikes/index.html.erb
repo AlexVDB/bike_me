@@ -1,11 +1,39 @@
-<h1>Notre sélection de vélo pour vous :</h1>
 
- <% @bikes.each do |bike| %>
-   <h3><%= "#{bike.title}" %></h3>
-   <p>Loué par <strong><%= "#{bike.user.name}" %></strong></p>
-   <h4><%= "#{bike.price}" %>€</h4>
-   <p><%= "#{bike.description}" %></p>
-   <p><%= "#{bike.user.localisation}" %></p>
-   <label># <%= "#{bike.category}" %></label>
-   <!-- Gérer l'affichage de l'icone dans le style ? -->
- <% end %>
+ <div class="main-container">
+
+
+    <div class="cards">
+
+
+
+        <% @bikes.each do |bike| %>
+        <div class="card-bike">
+          <%= cl_image_tag bike.photo, height: 300, width: 400 %>
+          <div class="card-bike-infos">
+            <div>
+              <h2><%= "#{bike.title}" %></h2>
+               <p><%= "#{bike.description}" %></p>
+            </div>
+            <h2 class="card-bike-pricing"><%= "#{bike.price}" %>€</h2>
+            <!-- <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-bike-user avatar-bordered" /> -->
+          </div>
+        </div>
+
+        <% end %>
+
+
+
+    </div>
+
+
+<div
+  id="map"
+  style="width: 100%;
+  height: 600px;"
+  data-markers="<%= @markers.to_json %>"
+  data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
+></div>
+
+
+
+  </div>
