@@ -1,10 +1,10 @@
 // Import your components CSS files here.
-@import "alert";
-@import "notice";
+@import "flash";
 @import "avatar";
 @import "navbar";
 @import "footer";
 @import "banner";
+@import "container";
 @import "card";
 @import "map";
 @import "button";
@@ -12,11 +12,3 @@
 @import "dropdown";
 
 
-.main-container {
-  display: flex;
-  /*padding-top: 100px;*/
-}
-
-.main-container .cards {
-  flex-grow: 1;
-}
