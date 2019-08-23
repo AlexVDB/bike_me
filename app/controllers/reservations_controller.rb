@@ -2,7 +2,7 @@ class ReservationsController < ApplicationController
   def show
     @reservation = current_user.reservations.where(id: params[:id]).first
     if @reservation.nil?
-      redirect_to root_path, notice: 'It is not your resa buddy!'
+      redirect_to root_path, alert: 'It is not your resa buddy!'
     else
       render :show
     end
@@ -14,7 +14,7 @@ class ReservationsController < ApplicationController
     @new_reservation.bike = @bike
     @new_reservation.user = current_user
     if @new_reservation.save
-      redirect_to reservation_path(@new_reservation), notice: 'Reservation was successfully booked!'
+      redirect_to reservation_path(@new_reservation), alert: 'Reservation was successfully booked!'
     else
       redirect_to bike_path(@bike), alert: 'This bike is not open for reservation at this date!'
     end
