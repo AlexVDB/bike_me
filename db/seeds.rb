@@ -81,5 +81,8 @@ bikes_attributes = [
 ]
 
 Bike.create!(bikes_attributes)
+Reservation.create!(date: Date.tomorrow, user: User.first, bike: Bike.last)
+Reservation.create!(date: Date.tomorrow, user: User.first, bike: Bike.first)
+
 
 puts "seed ok!"
